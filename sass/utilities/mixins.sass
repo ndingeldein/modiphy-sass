@@ -1,0 +1,122 @@
+=arrow($color)
+  border: 1px solid $color
+  border-right: 0
+  border-top: 0
+  content: " "
+  display: block
+  height: 0.5em
+  pointer-events: none
+  position: absolute
+  transform: rotate(-45deg)
+  width: 0.5em
+
+=block
+  &:not(:last-child)
+    margin-bottom: 1.5rem
+
+=clearfix
+  &:after
+    clear: both
+    content: " "
+    display: table
+
+=center($size)
+  left: 50%
+  margin-left: -($size / 2)
+  margin-top: -($size / 2)
+  position: absolute
+  top: 50%
+
+@keyframes spinAround
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(359deg)
+
+=loader
+  animation: spinAround 500ms infinite linear
+  border: 2px solid $border
+  border-radius: 290486px
+  border-right-color: transparent
+  border-top-color: transparent
+  content: ""
+  display: block
+  height: 1rem
+  position: relative
+  width: 1rem
+
+=overflow-touch
+  -webkit-overflow-scrolling: touch
+
+=overlay($offset: 0)
+  bottom: $offset
+  left: $offset
+  position: absolute
+  right: $offset
+  top: $offset
+
+=placeholder
+  $placeholders: ':-moz' ':-webkit-input' '-moz' '-ms-input'
+  @each $placeholder in $placeholders
+    &:#{$placeholder}-placeholder
+      @content
+
+=unselectable
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+// larger screen phones including Google Pixel
+// https://material.io/devices/
+// iphone is 414px
+$phone-plus: 411px !default
+// ipad vertical
+$tablet: 768px !default
+// ipad horizontal
+$desktop: 1024px !default
+// 1152px container + 40
+$widescreen: 1192px !default
+// 960 and 1152 have been chosen because
+// they are divisible by both 12 and 16
+
+=from($device)
+  @media screen and (min-width: $device)
+    @content
+
+=until($device)
+  @media screen and (max-width: $device - 1px)
+    @content
+
+=mobile
+  @media screen and (max-width: $tablet - 1px)
+    @content
+
+=phone-plus
+  @media screen and (min-width: $phone-plus)
+    @content
+
+=tablet
+  @media screen and (min-width: $tablet)
+    @content
+
+=tablet-only
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px)
+    @content
+
+=touch
+  @media screen and (max-width: $desktop - 1px)
+    @content
+
+=desktop
+  @media screen and (min-width: $desktop)
+    @content
+
+=desktop-only
+  @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px)
+    @content
+
+=widescreen
+  @media screen and (min-width: $widescreen)
+    @content

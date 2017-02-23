@@ -1,0 +1,31 @@
+{
+  "name": "modiphy-sass",
+  "version": "0.0.0",
+  "description": "Sass bootstrap based on bulma",
+  "main": "modiphy.sass",
+  "scripts": {
+    "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix",
+    "build-autoprefix": "postcss --use autoprefixer --output css/modiphy.css css/modiphy.css",
+    "build-clean": "rm -rf css",
+    "build-sass": "node-sass --output-style expanded --source-map true modiphy.sass css/modiphy.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndingeldein/modiphy-sass.git"
+  },
+  "keywords": [
+    "modiphy",
+    "sass"
+  ],
+  "author": "Neil Dingeldein <ndingeldein@gmail.com> (http://www.neildingeldein.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ndingeldein/modiphy-sass/issues"
+  },
+  "homepage": "https://github.com/ndingeldein/modiphy-sass#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.7.5",
+    "node-sass": "^4.5.0",
+    "postcss-cli": "^3.0.0-beta"
+  }
+}
