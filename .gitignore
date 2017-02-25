@@ -3,4 +3,5 @@
 /vendor
 /.idea
 /sent_for_dev
+/sandbox
 .sass-cache

@@ -86,6 +86,18 @@ $danger-invert: findColorInvert($danger) !default
 $light-invert: $dark !default
 $dark-invert: $light !default
 
+// Hover colors
+$primary-hover: $secondary !default
+$secondary-hover: $tertiary !default
+$tertiary-hover: $primary !default
+
+$info-hover: $info-invert !default
+$success-hover: $success-invert !default
+$warning-hover: $warning-invert !default
+$danger-hover: $danger-invert !default
+$light-hover: $dark-invert !default
+$dark-hover: $light-invert !default
+
 // General colors
 $background: $white-ter !default
 
@@ -132,6 +144,6 @@ $size-large: $size-4 !default
 ////////////////////////////////////////////////
 // 4. Lists and maps
 
-$colors: (white: ($white, $black), black: ($black, $white), light: ($light, $light-invert), dark: ($dark, $dark-invert), primary: ($primary, $primary-invert), secondary: ($secondary, $secondary-invert), tertiary: ($tertiary, $tertiary-invert), info: ($info, $info-invert), success: ($success, $success-invert), warning: ($warning, $warning-invert), danger: ($danger, $danger-invert)) !default
+$colors: (white: ($white, $black, $black), black: ($black, $white, $white), light: ($light, $light-invert, $light-hover), dark: ($dark, $dark-invert, $dark-hover), primary: ($primary, $primary-invert, $primary-hover), secondary: ($secondary, $secondary-invert, $secondary-hover), tertiary: ($tertiary, $tertiary-invert, $tertiary-hover), info: ($info, $info-invert, $info-hover), success: ($success, $success-invert, $success-hover), warning: ($warning, $warning-invert, $warning-hover), danger: ($danger, $danger-invert, $danger-hover)) !default
 
 $sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 !default
